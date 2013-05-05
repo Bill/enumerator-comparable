@@ -1,1 +1,1 @@
-require 'initializers/enumerator'
+require 'initializers/enumerator_comparable'
