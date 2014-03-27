@@ -1,4 +1,4 @@
-require 'ruby-debug'
+require 'byebug'
 
 # require 'simplecov'
 # SimpleCov.start do

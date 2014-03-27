@@ -8,6 +8,7 @@ class Enumerator
   # sequences are infinite, then this method never returns.
   # If you understand dictionary order for words then you understand
   # how this works. Shorter sequences come before longer sequences.
+  # The elements of the sequence(s) must define spaceship (<=>) too.
   # Here's a method that ought to be defined in Enumerator::Lazy
   # but isn't.
   def <=>(other)
@@ -23,10 +24,9 @@ class Enumerator
         end
       elsif b_end
         1 # other is shorter
-      elsif a < b
-        -1
-      elsif a > b
-        1
+      else
+        x = a <=> b
+        x unless x == 0
       end
       next if result.nil?
       return result
